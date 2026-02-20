@@ -37,7 +37,7 @@
     :head  :tail
     :tail  :wire
     :wire  (let [heads (:head neighbours)]
-             (if (or (= heads 1) (= heads 2))
+             (if (= heads 1)
                :head
                :wire))))
 
