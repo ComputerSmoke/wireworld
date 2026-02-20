@@ -1,5 +1,6 @@
 (ns wireworld.core
   (:require [reagent.core :as reagent]
+            [reagent.dom :as reagent-dom]
             [goog.events :refer [listen]]
             [wireworld.settings :as settings]
             [wireworld.actions :as actions]
@@ -7,8 +8,6 @@
             [wireworld.grid :as grid]
             [wireworld.controls :as controls]
             [wireworld.render :as render]))
-
-(enable-console-print!)
 
 ;; DOM Events -> wireworld.events -> wireworld.actions
 ;;                                          v
@@ -109,7 +108,7 @@
     (listen canvas "touchend" (juxt handle-mouseup reset-cursor!))))
 
 ;; render reagent components into the dom
-(reagent/render-component
+(reagent-dom/render
   [controls/toolbar app-state]
   (.getElementById js/document "app"))
 
