@@ -11,14 +11,10 @@
 (defn get-neighbours
   "returns the vector of neighbours around grid[x][y]"
   [grid x y]
-  [(get-in grid [(- x 1) (- y 1)])
-   (get-in grid [(- x 1) (- y 0)])
-   (get-in grid [(- x 1) (+ y 1)])
+  [(get-in grid [(- x 1) (- y 0)])
    (get-in grid [(- x 0) (- y 1)])
    (get-in grid [(- x 0) (+ y 1)])
-   (get-in grid [(+ x 1) (- y 1)])
-   (get-in grid [(+ x 1) (- y 0)])
-   (get-in grid [(+ x 1) (+ y 1)])])
+   (get-in grid [(+ x 1) (- y 0)])])
 
 (defn update-inc
   "utility for inc'ing the value at k in m"
